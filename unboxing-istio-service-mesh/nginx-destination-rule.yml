@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: nginx
+spec:
+  host: nginx-svc
+  subsets:
+  - name: v117
+    labels:
+      app: nginx
+      version: "1.17"
+  - name: v116
+    labels:
+      app: nginx
+      version: "1.16"
